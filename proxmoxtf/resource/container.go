@@ -1460,7 +1460,7 @@ func containerCreateCustom(ctx context.Context, d *schema.ResourceData, m interf
 	tags := d.Get(mkResourceVirtualEnvironmentContainerTags).([]interface{})
 	template := types.CustomBool(d.Get(mkResourceVirtualEnvironmentContainerTemplate).(bool))
 	unprivileged := types.CustomBool(d.Get(mkResourceVirtualEnvironmentContainerUnprivileged).(bool))
-	start_on_boot := types.CustomBool(d.Get(mkResourceVirtualEnvironmentContainerStartOnBoot).(bool))
+	startOnBoot := types.CustomBool(d.Get(mkResourceVirtualEnvironmentContainerStartOnBoot).(bool))
 	vmID := d.Get(mkResourceVirtualEnvironmentContainerVMID).(int)
 
 	if vmID == -1 {
@@ -1487,8 +1487,8 @@ func containerCreateCustom(ctx context.Context, d *schema.ResourceData, m interf
 		OSTemplateFileVolume: &operatingSystemTemplateFileID,
 		OSType:               &operatingSystemType,
 		RootFS:               rootFS,
-		StartOnBoot:          &start_on_boot,
-		Start:				  &started,
+		StartOnBoot:          &startOnBoot,
+		Start:                &started,
 		Swap:                 &memorySwap,
 		Template:             &template,
 		TTY:                  &consoleTTYCount,
