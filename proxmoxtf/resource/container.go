@@ -746,9 +746,9 @@ func Container() *schema.Resource {
 			},
 			mkResourceVirtualEnvironmentContainerStartOnBoot: {
 				Type:        schema.TypeBool,
-				Description: "Whether to start the container after to host is booted.",
+				Description: "Automatically start container when the host system boots.",
 				Optional:    true,
-				ForceNew:    true,
+				ForceNew:    false,
 				Default:     dvResourceVirtualEnvironmentContainerStartOnBoot,
 			},
 			mkResourceVirtualEnvironmentContainerVMID: {
